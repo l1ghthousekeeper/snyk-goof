@@ -1,3 +1,4 @@
+// test
 var utils    = require('../utils');
 var mongoose = require('mongoose');
 var Todo     = mongoose.model('Todo');
@@ -33,9 +34,8 @@ exports.index = function (req, res, next) {
     });
 };
 
-
 exports.admin = function (req, res, next) {
-console.log(req.body);
+  console.log(req.body);
   const sanitizedReq = sanitizeRequest(req.body);
   User.find({ username: sanitizedReq.username, password: sanitizedReq.password }, function (err, users) {
     if (users.length > 0) {
